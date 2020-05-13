@@ -4,6 +4,5 @@
 
 package sample;
 
-public class Controller {
-
+public class PairItem {
 }

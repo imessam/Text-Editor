@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2020. Mohamed Essam Abdelfattah
+ */
+
 package sample;
 
 import javafx.application.Application;

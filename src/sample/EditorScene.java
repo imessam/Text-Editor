@@ -1,9 +1,10 @@
+/*
+ * Copyright (c) 2020. Mohamed Essam Abdelfattah
+ */
+
 package sample;
 
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
@@ -11,7 +12,6 @@ import javafx.stage.Stage;
 import javafx.util.Pair;
 
 import java.io.*;
-import java.util.logging.Filter;
 
 
 public class EditorScene {
@@ -48,7 +48,7 @@ public class EditorScene {
             tabPane.getSelectionModel().select(tab);
             tabCount++;
         });
-        
+
 
         save.setOnAction(event -> {
             FileChooser fileChooser = new FileChooser();
