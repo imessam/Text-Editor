@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/copyright/Owner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/PairItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/EditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/EditorScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/editoScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/editoScene.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,8 +73,16 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="Owner" pattern="lib:*..*||src:*..*" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1bouUylR5VwAfuip44GnFSAykUX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -81,10 +99,12 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -178,7 +198,8 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1589310793108" duration="9609000" />
-      <workItem from="1589398460080" duration="1066000" />
+      <workItem from="1589398460080" duration="1739000" />
+      <workItem from="1589401923864" duration="977000" />
     </task>
     <servers />
   </component>
@@ -190,10 +211,22 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="312" y="92" key="#Notifications" timestamp="1589402837844">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="312" y="92" key="#Notifications/0.0.1440.860@0.0.1440.860" timestamp="1589402837844" />
     <state x="450" y="181" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589311200585">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="450" y="181" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.860@0.0.1440.860" timestamp="1589311200585" />
+    <state x="471" y="308" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1589402807306">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="471" y="308" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.860@0.0.1440.860" timestamp="1589402807306" />
+    <state x="376" y="30" key="CommitChangelistDialog2" timestamp="1589402995630">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="376" y="30" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1589402995630" />
     <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1589328868234">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -210,5 +243,13 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1397" height="222" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1589328868234" />
+    <state x="223" y="76" key="SettingsEditor" timestamp="1589402902375">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="223" y="76" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1589402902375" />
+    <state x="531" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589402830875">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="531" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.860@0.0.1440.860" timestamp="1589402830875" />
   </component>
 </project>
