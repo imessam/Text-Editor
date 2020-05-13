@@ -17,14 +17,19 @@ import java.io.*;
 public class EditorScene {
     static Stage window;
     int tabCount = 2;
+    Indexer indexer;
 
     @FXML
     private TabPane tabPane;
     @FXML
     private BorderPane borderPane;
 
+    public static void getStage(Stage temp) {
+        window = temp;
+    }
 
     public void initialize() {
+        indexer = new Indexer();
         MenuBar menuBar = new MenuBar();
         Menu fileMenu = new Menu("File");
         Menu editMenu = new Menu("Edit");
@@ -63,15 +68,23 @@ public class EditorScene {
         });
         load.setOnAction(event -> {
             FileChooser fileChooser = new FileChooser();
-            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text file","*.txt"));
-            TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text file", "*.txt"));
             File file = fileChooser.showOpenDialog(window);
-            if(file!=null) {
+            TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
+            if (file != null) {
                 Pair<String, String> temp = loadFile(file);
                 textArea.setText(temp.getKey());
                 tabPane.getSelectionModel().getSelectedItem().setText(temp.getValue());
+                String replace = temp.getKey().replace('\n', ' ');
+                String[] s1 = replace.split(" ");
+                int count = 0;
+                for (String s : s1
+                ) {
+                    indexer.addWord(s, temp.getValue(), count);
+                    count++;
+                }
             }
-
+            indexer.printWords();
         });
         find.setOnAction(event -> {
 
@@ -125,9 +138,5 @@ public class EditorScene {
 
 
         }
-    }
-
-    public static void getStage(Stage temp) {
-        window = temp;
     }
 }
