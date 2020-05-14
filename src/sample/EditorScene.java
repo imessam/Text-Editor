@@ -47,22 +47,17 @@ public class EditorScene {
         borderPane.setTop(menuBar);
 
 
-        newFile.setOnAction(event -> {
-            Tab tab = new Tab("New " + tabCount, new TextArea());
-            tabPane.getTabs().add(tab);
-            tabPane.getSelectionModel().select(tab);
-            tabCount++;
-        });
+        newFile.setOnAction(event -> addTab(true, null));
 
 
         save.setOnAction(event -> {
             FileChooser fileChooser = new FileChooser();
-            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text file","*.txt"));
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text file", "*.txt"));
             fileChooser.setInitialFileName(tabPane.getSelectionModel().getSelectedItem().getText());
             TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
             File file = fileChooser.showSaveDialog(window);
-            if(file!=null) {
-                saveFile(file, textArea.getText());
+            if (file != null) {
+                index(saveFile(file, textArea.getText()));
                 tabPane.getSelectionModel().getSelectedItem().setText(file.getName());
             }
         });
@@ -70,37 +65,63 @@ public class EditorScene {
             FileChooser fileChooser = new FileChooser();
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text file", "*.txt"));
             File file = fileChooser.showOpenDialog(window);
-            TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
             if (file != null) {
                 Pair<String, String> temp = loadFile(file);
+                addTab(false, temp.getValue());
+                TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
                 textArea.setText(temp.getKey());
                 tabPane.getSelectionModel().getSelectedItem().setText(temp.getValue());
-                String replace = temp.getKey().replace('\n', ' ');
-                String[] s1 = replace.split(" ");
-                int count = 0;
-                for (String s : s1
-                ) {
-                    indexer.addWord(s, temp.getValue(), count);
-                    count++;
-                }
+                index(temp);
             }
-            indexer.printWords();
         });
         find.setOnAction(event -> {
 
         });
     }
 
-    private Pair<String,String> loadFile(File file) {
-        String line = null;
+    private void index(Pair<String, String> key) {
+        String replace = key.getKey().replace('\n', ' ');
+        String[] s1 = replace.split(" ");
+        int count = 0;
+        for (String s : s1
+        ) {
+            indexer.addWord(s, key.getValue(), count);
+            count++;
+        }
+        indexer.printWords();
+    }
+
+    private void addTab(boolean isNew, String name) {
+        Tab tab;
+        boolean found = false;
+        if (isNew) {
+            tab = new Tab("New " + tabCount, new TextArea());
+            tabPane.getTabs().add(tab);
+            tabPane.getSelectionModel().select(tab);
+            tabCount++;
+        } else {
+            for (Tab temp : tabPane.getTabs()) {
+                if (temp.getText().equals(name)) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                tab = new Tab("New " + tabCount, new TextArea());
+                tabPane.getTabs().add(tab);
+                tabPane.getSelectionModel().select(tab);
+            }
+        }
+    }
+
+    private Pair<String, String> loadFile(File file) {
+        String line;
         StringBuilder s = new StringBuilder();
         try {
             if (file.exists()) {
                 System.out.println(file.getName());
                 try (BufferedReader bw = new BufferedReader(new FileReader(file))) {
-//                    textArea.setText("");
                     while ((line = bw.readLine()) != null) {
-//                        textArea.appendText(line);
                         s.append(line);
                         s.append("\n");
                     }
@@ -111,32 +132,39 @@ public class EditorScene {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-        return new Pair<>(s.toString(),file.getName());
+        return new Pair<>(s.toString(), file.getPath());
     }
 
-    private void saveFile(File file, String text) {
-        boolean found = false;
-        StringBuilder filename;
-        int i = 0;
-        while (!found) {
-            if (!file.exists()) {
-                found = true;
-                try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
-                    bw.write(text);
-                    System.out.println(text);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                System.out.println("File with the same name found");
-                i++;
-                filename = new StringBuilder(file.getName().substring(0, file.getName().indexOf(".txt")));
-                filename.append(i).append(".txt");
-                file.renameTo(new File(file.getAbsolutePath().substring(0, file.getAbsolutePath()
-                        .indexOf(file.getName())) + filename.toString()));
-            }
-
-
+    private Pair<String, String> saveFile(File file, String text) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+            bw.write(text);
+            System.out.println(text);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+//        boolean found = false;
+//        StringBuilder filename;
+//        int i = 0;
+//        while (!found) {
+//            if (!file.exists()) {
+//                found = true;
+//                try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+//                    bw.write(text);
+//                    System.out.println(text);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            } else {
+//                System.out.println("File with the same name found");
+//                i++;
+//                filename = new StringBuilder(file.getName().substring(0, file.getName().indexOf(".txt")));
+//                filename.append(i).append(".txt");
+//                file.renameTo(new File(file.getAbsolutePath().substring(0, file.getAbsolutePath()
+//                        .indexOf(file.getName())) + filename.toString()));
+//            }
+//
+//
+//        }
+        return new Pair<>(text, file.getPath());
     }
 }

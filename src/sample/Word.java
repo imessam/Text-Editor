@@ -30,21 +30,34 @@ public class Word {
     }
 
     public void addWordIndex(String filename, int location) {
+        if (!locationFound(filename, location)) {
+            boolean found = false;
+            for (PairItem<String, Integer> pair :
+                    wordFrequency) {
+                if (pair.getKey().equals(filename)) {
+                    pair.updateValue(pair.getValue() + 1);
+                    found = true;
+                    break;
+                }
+            }
 
-        boolean found = false;
-        for (PairItem<String, Integer> pair :
-                wordFrequency) {
-            if (pair.getKey().equals(filename)) {
-                pair.updateValue(pair.getValue() + 1);
-                found = true;
-                break;
+            wordIndex.add(new PairItem<>(filename, location));
+
+            //System.out.println("Adding word "+word+" of "+filename);
+            if (!found) {
+                wordFrequency.add(new PairItem<>(filename, 1));
             }
         }
-        wordIndex.add(new PairItem<>(filename, location));
-        //System.out.println("Adding word "+word+" of "+filename);
-        if (!found) {
-            wordFrequency.add(new PairItem<>(filename, 1));
+    }
+
+    private boolean locationFound(String filename, int location) {
+        for (PairItem<String, Integer> pair :
+                wordIndex) {
+            if ((pair.getKey().equals(filename)) && (pair.getValue() == location)) {
+                return true;
+            }
         }
+        return false;
     }
 
     public void printIndexes() {
@@ -57,7 +70,7 @@ public class Word {
 
     @Override
     public boolean equals(Object obj) {
-        Word temp = null;
+        Word temp;
         if (this == obj) {
             return true;
         }
