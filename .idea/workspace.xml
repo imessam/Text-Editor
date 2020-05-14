@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Updating from ide">
-      <change afterPath="$PROJECT_DIR$/src/sample/Indexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/Word.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Updating from IDE 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/EditorScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/EditorScene.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/EditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/EditorScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PairItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PairItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Word.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +56,6 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="JavaFxApplication" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -84,7 +83,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -101,7 +99,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -197,6 +195,8 @@
       <workItem from="1589310793108" duration="9609000" />
       <workItem from="1589398460080" duration="1739000" />
       <workItem from="1589401923864" duration="10298000" />
+      <workItem from="1589413217177" duration="404000" />
+      <workItem from="1589422255851" duration="1522000" />
     </task>
     <task id="LOCAL-00001" summary="Updating from ide">
       <created>1589402996687</created>
@@ -205,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589402996687</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updating from IDE 2">
+      <created>1589413435714</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589413435714</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,12 +231,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Updating from ide" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating from ide" />
+    <MESSAGE value="Updating from IDE 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating from IDE 2" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -254,30 +263,34 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="471" y="308" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.860@0.0.1440.860" timestamp="1589413373848" />
-    <state x="376" y="30" key="CommitChangelistDialog2" timestamp="1589413409999">
+    <state x="376" y="30" key="CommitChangelistDialog2" timestamp="1589413434174">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="376" y="30" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1589413409999" />
-    <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1589413156942">
+    <state x="376" y="30" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1589413434174" />
+    <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1589490937740">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1589413156942" />
-    <state width="1397" height="222" key="GridCell.Tab.0.center" timestamp="1589413156941">
+    <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1589490937740" />
+    <state width="1397" height="222" key="GridCell.Tab.0.center" timestamp="1589490937740">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="222" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1589413156941" />
-    <state width="1397" height="222" key="GridCell.Tab.0.left" timestamp="1589413156941">
+    <state width="1397" height="222" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1589490937740" />
+    <state width="1397" height="222" key="GridCell.Tab.0.left" timestamp="1589490937740">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="222" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1589413156941" />
-    <state width="1397" height="222" key="GridCell.Tab.0.right" timestamp="1589413156941">
+    <state width="1397" height="222" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1589490937740" />
+    <state width="1397" height="222" key="GridCell.Tab.0.right" timestamp="1589490937740">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="222" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1589413156941" />
-    <state x="270" y="85" key="SettingsEditor" timestamp="1589403868060">
+    <state width="1397" height="222" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1589490937740" />
+    <state x="270" y="85" key="SettingsEditor" timestamp="1589482828327">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="270" y="85" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1589403868060" />
+    <state x="270" y="85" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1589482828327" />
+    <state x="312" y="155" key="Vcs.Push.Dialog.v2" timestamp="1589413447880">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="312" y="155" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1589413447880" />
     <state x="531" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589413240747">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
