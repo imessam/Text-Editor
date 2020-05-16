@@ -6,7 +6,7 @@ package sample;
 
 public class PairItem<T, K> {
 
-    private T Key;
+    private final T Key;
     private K Value;
 
     public PairItem(T key, K value) {
@@ -25,4 +25,21 @@ public class PairItem<T, K> {
     public void updateValue(K newValue) {
         Value = newValue;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        PairItem temp;
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof PairItem) {
+
+            temp = (PairItem) obj;
+            return (temp.getKey().equals(this.Key)) && (temp.getValue() == (this.Value));
+        }
+
+        return false;
+    }
+
+
 }
