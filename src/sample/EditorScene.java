@@ -30,6 +30,12 @@ public class EditorScene {
     private TabPane tabPane;
     @FXML
     private BorderPane borderPane;
+    @FXML
+    Label wordLabel;
+    @FXML
+    ListView<String> documentList;
+    @FXML
+    ListView<Integer> locationList;
 
     public static void getStage(Stage temp) {
         window = temp;
@@ -44,30 +50,18 @@ public class EditorScene {
         MenuItem save = new MenuItem("Save");
         MenuItem open = new MenuItem("Open");
         MenuItem load = new MenuItem("Load");
+        MenuItem findNext = new MenuItem("Find next");
         MenuItem find = new MenuItem("Find");
         MenuItem newFile = new MenuItem("New");
         tabPane.getTabs().add(new Tab("New", new TextArea()));
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.ALL_TABS);
         fileMenu.getItems().addAll(newFile, open, save, load);
-        editMenu.getItems().add(find);
+        editMenu.getItems().addAll(find, findNext);
         menuBar.getMenus().addAll(fileMenu, editMenu);
         borderPane.setTop(menuBar);
 
 
         newFile.setOnAction(event -> addTab(true, null));
-
-
-        save.setOnAction(event -> {
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text file", "*.txt"));
-            fileChooser.setInitialFileName(tabPane.getSelectionModel().getSelectedItem().getText());
-            TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
-            File file = fileChooser.showSaveDialog(window);
-            if (file != null) {
-                index(saveFile(file, textArea.getText()));
-                tabPane.getSelectionModel().getSelectedItem().setText(file.getName());
-            }
-        });
 
         open.setOnAction(event -> {
             FileChooser fileChooser = new FileChooser();
@@ -87,6 +81,18 @@ public class EditorScene {
                 tabPane.getSelectionModel().getSelectedItem().setText(temp.getValue());
                 index(temp);
                 //indexer.printWords();
+            }
+        });
+
+        save.setOnAction(event -> {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text file", "*.txt"));
+            fileChooser.setInitialFileName(tabPane.getSelectionModel().getSelectedItem().getText());
+            TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
+            File file = fileChooser.showSaveDialog(window);
+            if (file != null) {
+                index(saveFile(file, textArea.getText()));
+                tabPane.getSelectionModel().getSelectedItem().setText(file.getName());
             }
         });
 
@@ -121,16 +127,27 @@ public class EditorScene {
         find.setOnAction(event -> {
             findScene = new FindScene();
             findScene.setIndexer(indexer);
-            findScene.setFilename(tabPane.getSelectionModel().getSelectedItem().getText());
+            findScene.setLabel(wordLabel);
+            findScene.setListView(documentList, locationList);
+            findScene.setIsFindNext(false);
             try {
                 findScene.display();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            PairItem<Integer, Integer> location = findScene.getLocation();
-            TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
-            System.out.println(textArea.getText().length());
-            textArea.selectRange(location.getKey(), location.getValue());
+        });
+
+        findNext.setOnAction(event -> {
+            findScene = new FindScene();
+            findScene.setIndexer(indexer);
+            findScene.setFilename(tabPane.getSelectionModel().getSelectedItem().getText());
+            findScene.getTextArea((TextArea) tabPane.getSelectionModel().getSelectedItem().getContent());
+            findScene.setIsFindNext(true);
+            try {
+                findScene.display();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
     }
 
@@ -197,14 +214,7 @@ public class EditorScene {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-//        for (int i = 0; i <s.toString().length() ; i++) {
-//            System.out.print(i+" : ");
-//            for (int j = i; j <s.toString().indexOf(" ") ; j++) {
-//                System.out.print(s.charAt(j));
-//                i++;
-//            }
-//            System.out.println("\n");
-//        }
+        // s.append(".");
         return new Pair<>(s.toString(), file.getPath());
     }
 

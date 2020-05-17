@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Text Editor" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Updating from IDE 4">
-      <change afterPath="$PROJECT_DIR$/src/sample/FindScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/LoadingScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/findScene.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/loadingScene.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Text_Editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/EditorScene$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/EditorScene$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/EditorScene$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/EditorScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/EditorScene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/Indexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/Indexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/FindScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/FindScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/LoadingScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/LoadingScene.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/PairItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/PairItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/Word.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/editoScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/editoScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/findScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/findScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/loadingScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/loadingScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/EditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/EditorScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/FindScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FindScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Indexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Indexer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/PairItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PairItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Word.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/editoScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/editoScene.fxml" afterDir="false" />
     </list>
@@ -110,9 +115,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/sample/editor.ico" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="copyright.profiles" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -225,7 +234,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589413435714</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updating from IDE 4">
+      <created>1589671296297</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1589671296297</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updating from IDE 4">
+      <created>1589671399533</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589671399533</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,10 +291,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="312" y="92" key="#Notifications/0.0.1440.860@0.0.1440.860" timestamp="1589402837844" />
-    <state x="525" y="150" key="#com.intellij.ide.util.MemberChooser" timestamp="1589662713983">
+    <state x="525" y="150" key="#com.intellij.ide.util.MemberChooser" timestamp="1589690259302">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="525" y="150" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1589662713983" />
+    <state x="525" y="150" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1589690259302" />
     <state x="450" y="181" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589311200585">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -280,26 +303,30 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="471" y="308" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.860@0.0.1440.860" timestamp="1589616302963" />
-    <state x="376" y="30" key="CommitChangelistDialog2" timestamp="1589671069826">
+    <state x="376" y="30" key="CommitChangelistDialog2" timestamp="1589671398564">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="376" y="30" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1589671069826" />
-    <state width="1397" height="311" key="GridCell.Tab.0.bottom" timestamp="1589671069968">
+    <state x="376" y="30" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1589671398564" />
+    <state x="570" y="175" key="FileChooserDialogImpl" timestamp="1589671849632">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="311" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1589671069968" />
-    <state width="1397" height="311" key="GridCell.Tab.0.center" timestamp="1589671069967">
+    <state x="570" y="175" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1589671849632" />
+    <state width="1397" height="311" key="GridCell.Tab.0.bottom" timestamp="1589693610143">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="311" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1589671069967" />
-    <state width="1397" height="311" key="GridCell.Tab.0.left" timestamp="1589671069967">
+    <state width="1397" height="311" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1589693610143" />
+    <state width="1397" height="311" key="GridCell.Tab.0.center" timestamp="1589693610142">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="311" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1589671069967" />
-    <state width="1397" height="311" key="GridCell.Tab.0.right" timestamp="1589671069967">
+    <state width="1397" height="311" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1589693610142" />
+    <state width="1397" height="311" key="GridCell.Tab.0.left" timestamp="1589693610142">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="311" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1589671069967" />
+    <state width="1397" height="311" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1589693610142" />
+    <state width="1397" height="311" key="GridCell.Tab.0.right" timestamp="1589693610142">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="311" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1589693610142" />
     <state width="1397" height="222" key="GridCell.Tab.1.bottom" timestamp="1589616528019">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -336,14 +363,14 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="300" y="172" key="IDE.errors.dialog/0.0.1440.860@0.0.1440.860" timestamp="1589613689691" />
-    <state x="270" y="85" key="SettingsEditor" timestamp="1589520106646">
+    <state x="270" y="8" key="SettingsEditor" timestamp="1589679135460">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="270" y="85" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1589520106646" />
-    <state x="312" y="155" key="Vcs.Push.Dialog.v2" timestamp="1589413447880">
+    <state x="270" y="8" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1589679135460" />
+    <state x="312" y="155" key="Vcs.Push.Dialog.v2" timestamp="1589671496398">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="312" y="155" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1589413447880" />
+    <state x="312" y="155" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1589671496398" />
     <state x="531" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589413240747">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

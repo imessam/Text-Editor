@@ -40,6 +40,7 @@ public class Word implements Comparable<Word> {
 //                    break;
 //                }
 //            }
+
         if (!locationFound(filename, location)) {
             wordIndex.add(new PairItem<>(filename, location));
         }
