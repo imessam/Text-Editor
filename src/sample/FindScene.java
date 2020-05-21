@@ -115,7 +115,7 @@ public class FindScene {
             listView.getItems().clear();
             listView2.getItems().clear();
             text = wordFind.getText();
-            label.setText("Word : \" " + text + " \"");
+            label.setText(text);
             for (Word temp :
                     indexer.getWords()) {
                 if (temp.getWord().equals(text)) {

@@ -67,21 +67,21 @@ public class EditorScene {
             FileChooser fileChooser = new FileChooser();
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text file", "*.txt"));
             File file = fileChooser.showOpenDialog(window);
-
-            if (file != null) {
-                try {
-                    loadingScene.display(1);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                Pair<String, String> temp = loadFile(file);
-                addTab(false, temp.getValue());
-                TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
-                textArea.setText(temp.getKey());
-                tabPane.getSelectionModel().getSelectedItem().setText(temp.getValue());
-                index(temp);
-                //indexer.printWords();
-            }
+            openFile(file);
+//            if (file != null) {
+//                try {
+//                    loadingScene.display(1);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//                Pair<String, String> temp = loadFile(file);
+//                addTab(false, temp.getValue());
+//                TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
+//                textArea.setText(temp.getKey());
+//                tabPane.getSelectionModel().getSelectedItem().setText(temp.getValue());
+//                index(temp);
+//                //indexer.printWords();
+//            }
         });
 
         save.setOnAction(event -> {
@@ -90,38 +90,46 @@ public class EditorScene {
             fileChooser.setInitialFileName(tabPane.getSelectionModel().getSelectedItem().getText());
             TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
             File file = fileChooser.showSaveDialog(window);
-            if (file != null) {
-                index(saveFile(file, textArea.getText()));
-                tabPane.getSelectionModel().getSelectedItem().setText(file.getName());
-            }
+            saveFile(file, textArea);
+//            if (file != null) {
+//                try {
+//                    loadingScene.display(1);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//                index(saveFile(file, textArea.getText()));
+//                tabPane.getSelectionModel().getSelectedItem().setText(file.getPath());
+//            }
         });
 
         load.setOnAction(event -> {
-            File[] files = new DirectoryChooser().showDialog(window).listFiles((dir, name) -> name.endsWith(".txt"));
-            if (files != null) {
-                try {
-                    loadingScene.display(files.length);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                Task<Void> task = new Task<>() {
-                    @Override
-                    protected Void call() {
-                        System.out.println(LocalTime.now());
-                        for (File file :
-                                files) {
-                            index(loadFile(file));
-                        }
-                        System.out.println(LocalTime.now());
-                        return null;
+            File file = new DirectoryChooser().showDialog(window);
+            if (file != null) {
+                File[] files = file.listFiles((dir, name) -> name.endsWith(".txt"));
+                if (files != null) {
+                    try {
+                        loadingScene.display(files.length);
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                };
-                Thread thread = new Thread(task);
-                thread.setDaemon(true);
-                thread.start();
-                //indexer.printWords();
+                    Task<Void> task = new Task<>() {
+                        @Override
+                        protected Void call() {
+                            System.out.println(LocalTime.now());
+                            for (File file :
+                                    files) {
+                                index(loadFile(file));
+                            }
+                            System.out.println(LocalTime.now());
+                            return null;
+                        }
+                    };
+                    Thread thread = new Thread(task);
+                    thread.setDaemon(true);
+                    thread.start();
+                    //indexer.printWords();
+                }
             }
-
         });
 
         find.setOnAction(event -> {
@@ -149,6 +157,17 @@ public class EditorScene {
                 e.printStackTrace();
             }
         });
+
+        documentList.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                TextArea textArea = openFile(new File(documentList.getSelectionModel().getSelectedItem()));
+                locationList.getSelectionModel().select(documentList.getSelectionModel().getSelectedIndex());
+                int loc = locationList.getSelectionModel().getSelectedItem();
+                textArea.selectRange(loc, loc + wordLabel.getText().length());
+            }
+
+        });
+
     }
 
     private void index(Pair<String, String> key) {
@@ -186,6 +205,7 @@ public class EditorScene {
             for (Tab temp : tabPane.getTabs()) {
                 if (temp.getText().equals(name)) {
                     found = true;
+                    tabPane.getSelectionModel().select(temp);
                     break;
                 }
             }
@@ -195,6 +215,39 @@ public class EditorScene {
                 tabPane.getSelectionModel().select(tab);
             }
         }
+    }
+
+    private TextArea openFile(File file) {
+        if (file != null) {
+            try {
+                loadingScene.display(1);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            Pair<String, String> temp = loadFile(file);
+            addTab(false, temp.getValue());
+            TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
+            textArea.setText(temp.getKey());
+            tabPane.getSelectionModel().getSelectedItem().setText(temp.getValue());
+            index(temp);
+            //indexer.printWords();
+            return textArea;
+        }
+        return null;
+    }
+
+    private void saveFile(File file, TextArea textArea) {
+        if (file != null) {
+            try {
+                loadingScene.display(1);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            index(saveFile(file, textArea.getText()));
+            tabPane.getSelectionModel().getSelectedItem().setText(file.getPath());
+        }
+
+
     }
 
     private Pair<String, String> loadFile(File file) {
