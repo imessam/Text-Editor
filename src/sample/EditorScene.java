@@ -43,6 +43,10 @@ public class EditorScene {
 
     public void initialize() {
         loadingScene = new LoadingScene();
+        findScene = new FindScene();
+        findScene.setIndexer(indexer);
+        findScene.setLabel(wordLabel);
+        findScene.setListView(documentList, locationList);
         indexer = new Indexer();
         MenuBar menuBar = new MenuBar();
         Menu fileMenu = new Menu("File");
@@ -133,10 +137,10 @@ public class EditorScene {
         });
 
         find.setOnAction(event -> {
-            findScene = new FindScene();
-            findScene.setIndexer(indexer);
-            findScene.setLabel(wordLabel);
-            findScene.setListView(documentList, locationList);
+//            findScene = new FindScene();
+            //findScene.setIndexer(indexer);
+//            findScene.setLabel(wordLabel);
+//            findScene.setListView(documentList, locationList);
             findScene.setIsFindNext(false);
             try {
                 findScene.display();
@@ -146,8 +150,8 @@ public class EditorScene {
         });
 
         findNext.setOnAction(event -> {
-            findScene = new FindScene();
-            findScene.setIndexer(indexer);
+//            findScene = new FindScene();
+            // findScene.setIndexer(indexer);
             findScene.setFilename(tabPane.getSelectionModel().getSelectedItem().getText());
             findScene.getTextArea((TextArea) tabPane.getSelectionModel().getSelectedItem().getContent());
             findScene.setIsFindNext(true);

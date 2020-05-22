@@ -48,7 +48,11 @@ public class FindScene {
     }
 
     public void initialize() {
-
+        if (isFindNext) {
+            findBTN.setText("Find next");
+        } else {
+            findBTN.setText("Find");
+        }
         Node n1 = listView.lookup(".scroll-bar");
         if (n1 instanceof ScrollBar) {
             final ScrollBar bar1 = (ScrollBar) n1;
@@ -90,7 +94,6 @@ public class FindScene {
 
     private void findNext() {
         if (isFindNext) {
-            findBTN.setText("Find next");
             if (!(text.equals(wordFind.getText()))) {
                 text = wordFind.getText();
                 i = 0;
@@ -113,7 +116,6 @@ public class FindScene {
             }
             textArea.selectRange(location.getKey(), location.getValue());
         } else {
-            findBTN.setText("Find");
             listView.getItems().clear();
             listView2.getItems().clear();
             text = wordFind.getText();
