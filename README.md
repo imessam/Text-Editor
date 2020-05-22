@@ -5,3 +5,5 @@ Text Editor using Inverted Index search engine.
 Implented using Java , GUI by JavaFX.
 
 Mohamed Essam Abdelfatah.
+
+Download : https://github.com/imessam/Text-Editor/releases/download/1.0/Text.Editor.exe
