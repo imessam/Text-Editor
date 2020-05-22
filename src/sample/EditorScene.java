@@ -42,12 +42,12 @@ public class EditorScene {
     }
 
     public void initialize() {
+        indexer = new Indexer();
         loadingScene = new LoadingScene();
         findScene = new FindScene();
         findScene.setIndexer(indexer);
         findScene.setLabel(wordLabel);
         findScene.setListView(documentList, locationList);
-        indexer = new Indexer();
         MenuBar menuBar = new MenuBar();
         Menu fileMenu = new Menu("File");
         Menu editMenu = new Menu("Edit");
@@ -72,20 +72,6 @@ public class EditorScene {
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text file", "*.txt"));
             File file = fileChooser.showOpenDialog(window);
             openFile(file);
-//            if (file != null) {
-//                try {
-//                    loadingScene.display(1);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//                Pair<String, String> temp = loadFile(file);
-//                addTab(false, temp.getValue());
-//                TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
-//                textArea.setText(temp.getKey());
-//                tabPane.getSelectionModel().getSelectedItem().setText(temp.getValue());
-//                index(temp);
-//                //indexer.printWords();
-//            }
         });
 
         save.setOnAction(event -> {
@@ -95,15 +81,6 @@ public class EditorScene {
             TextArea textArea = (TextArea) tabPane.getSelectionModel().getSelectedItem().getContent();
             File file = fileChooser.showSaveDialog(window);
             saveFile(file, textArea);
-//            if (file != null) {
-//                try {
-//                    loadingScene.display(1);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//                index(saveFile(file, textArea.getText()));
-//                tabPane.getSelectionModel().getSelectedItem().setText(file.getPath());
-//            }
         });
 
         load.setOnAction(event -> {
@@ -131,16 +108,11 @@ public class EditorScene {
                     Thread thread = new Thread(task);
                     thread.setDaemon(true);
                     thread.start();
-                    //indexer.printWords();
                 }
             }
         });
 
         find.setOnAction(event -> {
-//            findScene = new FindScene();
-            //findScene.setIndexer(indexer);
-//            findScene.setLabel(wordLabel);
-//            findScene.setListView(documentList, locationList);
             findScene.setIsFindNext(false);
             try {
                 findScene.display();
@@ -150,8 +122,7 @@ public class EditorScene {
         });
 
         findNext.setOnAction(event -> {
-//            findScene = new FindScene();
-            // findScene.setIndexer(indexer);
+
             findScene.setFilename(tabPane.getSelectionModel().getSelectedItem().getText());
             findScene.getTextArea((TextArea) tabPane.getSelectionModel().getSelectedItem().getContent());
             findScene.setIsFindNext(true);
@@ -189,9 +160,8 @@ public class EditorScene {
             for (String s2 :
                     s1.split(" ")) {
                 index = s1.indexOf(s2, index);
-                indexer.addWord(s2, value, index + count);
+                indexer.addWord(s2.toLowerCase(), value, index + count);
                 index += s2.length() + 1;
-                //System.out.println(key1.substring(key1.indexOf(s2)+count,s2.length()+key1.indexOf(s2)+count));
             }
             count = s1.length() + 1;
         }
