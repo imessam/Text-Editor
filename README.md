@@ -6,4 +6,4 @@ Implemented using Java , GUI by JavaFX.
 
 Mohamed Essam Abdelfatah.
 
-Download : https://github.com/imessam/Text-Editor/releases/download/1.0/Text.Editor.exe
+Download : https://github.com/imessam/Text-Editor/releases/download/1.1/Text.Editor.exe
