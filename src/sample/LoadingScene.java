@@ -36,7 +36,6 @@ public class LoadingScene {
     }
 
     public void setLoadingBar() {
-        // System.out.println(count+" / "+LoadingScene.size+" = "+count/LoadingScene.size);
         loadingBar.setProgress(count / LoadingScene.size);
         count++;
     }

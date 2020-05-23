@@ -100,7 +100,6 @@ public class FindScene {
                 for (Word temp :
                         indexer.getWords()) {
                     if (temp.getWord().equals(text)) {
-                        temp.printIndexes();
                         wordIndex = temp.getWordIndex();
                         break;
                     }
@@ -109,7 +108,6 @@ public class FindScene {
             for (; i < wordIndex.size(); i++) {
                 if (wordIndex.get(i).getKey().equals(filename)) {
                     location = new PairItem<>(wordIndex.get(i).getValue(), wordIndex.get(i).getValue() + text.length());
-                    System.out.println("begin : " + location.getKey() + " , end: " + location.getValue());
                     i++;
                     break;
                 }
@@ -123,7 +121,6 @@ public class FindScene {
             for (Word temp :
                     indexer.getWords()) {
                 if (temp.getWord().equals(text)) {
-                    temp.printIndexes();
                     wordIndex = temp.getWordIndex();
                     break;
                 }

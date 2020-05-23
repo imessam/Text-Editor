@@ -15,7 +15,6 @@ import javafx.stage.Stage;
 import javafx.util.Pair;
 
 import java.io.*;
-import java.time.LocalTime;
 
 
 public class EditorScene {
@@ -96,12 +95,10 @@ public class EditorScene {
                     Task<Void> task = new Task<>() {
                         @Override
                         protected Void call() {
-                            System.out.println(LocalTime.now());
                             for (File file :
                                     files) {
                                 index(loadFile(file));
                             }
-                            System.out.println(LocalTime.now());
                             return null;
                         }
                     };
@@ -204,7 +201,6 @@ public class EditorScene {
             textArea.setText(temp.getKey());
             tabPane.getSelectionModel().getSelectedItem().setText(temp.getValue());
             index(temp);
-            //indexer.printWords();
             return textArea;
         }
         return null;
@@ -241,7 +237,6 @@ public class EditorScene {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-        // s.append(".");
         return new Pair<>(s.toString(), file.getPath());
     }
 

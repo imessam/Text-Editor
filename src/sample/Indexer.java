@@ -20,8 +20,8 @@ public class Indexer {
         return words;
     }
 
-    public void addWord(String s, String filename, int location) {
-        Word word = new Word(s);
+    public void addWord(String text, String filename, int location) {
+        Word word = new Word(text);
         int loc;
         if ((loc = findWord(word)) >= 0) {
             words.get(loc).addWordIndex(filename, location);
@@ -36,13 +36,4 @@ public class Indexer {
         return Collections.binarySearch(words, word);
     }
 
-    public void printWords() {
-        for (Word word :
-                words) {
-            word.printIndexes();
-            System.out.println("==============================================================");
-            // word.printFrequencies();
-            System.out.println("==============================================================");
-        }
-    }
 }
